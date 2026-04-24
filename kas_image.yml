@@ -21,6 +21,7 @@ local_conf_header:
     HDMI_FORCE_HOTPLUG = "1"
     DISPLAY_ROTATE = "0"
     MACHINE_FEATURES += "pitft"
+    DISABLE_VC4GRAPHICS = "1"
   debug-tweaks: |
     EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
