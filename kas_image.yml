@@ -1,9 +1,28 @@
 header:
-  version: 22
+  version: 18
 
 machine: raspberrypi3-64
 distro: my-distro
+target: my-image
 build_system: openembedded
+
+local_conf_header: 
+  standard : |
+    PACKAGE_CLASSES = "package_deb"
+  rpi_specific: |
+    ENABLE_UART = "1"
+    ENABLE_SPI_BUS = "1"
+    RPI_EXTRA_CONFIG = "dtoverlay=waveshare35b-v2"
+    HDMI_GROUP = "2"
+    HDMI_MODE = "1"
+    HDMI_MODE = "87"
+    HDMI_DRIVE = "2"
+    HDMI_CVT = "480 320 60 6 0 0 0"
+    HDMI_FORCE_HOTPLUG = "1"
+    DISPLAY_ROTATE = "0"
+    MACHINE_FEATURES += "pitft"
+  debug-tweaks: |
+    EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 repos:
   poky:
@@ -13,17 +32,25 @@ repos:
       meta:
       meta-poky:
       meta-yocto-bsp:
+    path: sources/poky
   meta-openembedded:
     url: https://github.com/openembedded/meta-openembedded.git
-    brach: scarthgap
+    branch: scarthgap
     layers:
       meta-oe:
       meta-python:
+    path: sources/meta-openembedded
+  meta-raspberrypi:
+    url: https://github.com/agherzan/meta-raspberrypi.git
+    branch: scarthgap
+    path: sources/meta-raspberrypi
   meta-qt5:
     url: https://github.com/meta-qt5/meta-qt5.git
     branch: scarthgap
+    path: sources/meta-qt5
   meta-my:
-    url: git@github.com:Sigma93-cc/meta-image-RPI3B.git
-    brach: scarthgap
+    url: https://github.com/Sigma93-cc/meta-image-RPI3B.git
+    branch: scarthgap
+    path: sources/meta-my
     
 
