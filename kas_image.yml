@@ -6,25 +6,19 @@ distro: my-distro
 target: my-image
 build_system: openembedded
 
+artifacts:
+  disk-image: image
+
 local_conf_header: 
-  standard : |
-    PACKAGE_CLASSES = "package_deb"
   rpi_specific: |
     ENABLE_UART = "1"
     ENABLE_SPI_BUS = "1"
-    RPI_EXTRA_CONFIG = "dtoverlay=waveshare35b-v2"
-    HDMI_GROUP = "2"
-    HDMI_MODE = "1"
-    HDMI_MODE = "87"
-    HDMI_DRIVE = "2"
-    HDMI_CVT = "480 320 60 6 0 0 0"
-    HDMI_FORCE_HOTPLUG = "1"
+    RPI_EXTRA_CONFIG = "dtoverlay=waveshare35b-v2\ndtoverlay=disable-bt"
     DISPLAY_ROTATE = "0"
-    MACHINE_FEATURES += "pitft"
     DISABLE_VC4GRAPHICS = "1"
+    DISABLE_RPI_BOOT_LOGO = "1"
   debug-tweaks: |
     EXTRA_IMAGE_FEATURES = "debug-tweaks"
-
 repos:
   poky:
     url: https://git.yoctoproject.org/poky.git
