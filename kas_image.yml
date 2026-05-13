@@ -2,8 +2,10 @@ header:
   version: 18
 
 machine: raspberrypi3-64
-distro: my-distro
-target: my-image
+distro: sigmastudio
+target: 
+  - my-image
+  - swupdate-image-bundle
 build_system: openembedded
 
 artifacts:
@@ -17,6 +19,7 @@ local_conf_header:
     DISPLAY_ROTATE = "0"
     DISABLE_VC4GRAPHICS = "1"
     DISABLE_RPI_BOOT_LOGO = "1"
+    RPI_USE_U_BOOT = "1"
   debug-tweaks: |
     EXTRA_IMAGE_FEATURES = "debug-tweaks"
 repos:
@@ -43,6 +46,10 @@ repos:
     url: https://github.com/meta-qt5/meta-qt5.git
     branch: scarthgap
     path: sources/meta-qt5
+  meta-swupdate:
+    url: https://github.com/sbabic/meta-swupdate.git
+    branch: scarthgap
+    path: sources/meta-swupdate
   meta-my:
     url: https://github.com/Sigma93-cc/meta-image-RPI3B.git
     branch: scarthgap
