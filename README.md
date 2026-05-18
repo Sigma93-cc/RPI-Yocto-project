@@ -13,7 +13,7 @@ Docker
 
 ## Артефакты сборки
  * каталог сборки: `build/tmp/deploy/images/${MACHINE}`;
- * образ *.wic.bz2`;
+ * образ `*.wic.bz2`;
  * SWUpdate-файл `*.swu` для OTA-обновления OC.
 
 ## Установка/обновление образа
