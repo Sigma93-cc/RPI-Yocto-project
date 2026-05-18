@@ -1,10 +1,10 @@
 # Проект сборки ОС SigmaStudio, основанный на Yocto-project
 
 ## Поддерживаемые платы
-Raspberry Pi 3 Model B+.
+* Raspberry Pi 3 Model B+.
 
 ## Требования
-Docker
+* Docker
 
 ## Процесс сборки
 * Для запуска сборки используется скрипт `build.sh`;
