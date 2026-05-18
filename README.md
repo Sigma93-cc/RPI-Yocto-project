@@ -1,4 +1,6 @@
-# Проект сборки ОС SigmaStudio, основанный на Yocto-project
+# Проект сборки ОС SigmaStudio
+* Основан на Yocto-project;
+* Для сборки используется kas
 
 ## Поддерживаемые платы
 * Raspberry Pi 3 Model B+.
