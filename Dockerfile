@@ -4,7 +4,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
-# Зависимости Yocto (scarthgap / Poky 5.x)
 RUN apt-get update && apt-get install -y \
     gawk \
     wget \
