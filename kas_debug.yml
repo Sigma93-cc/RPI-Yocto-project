@@ -1,0 +1,7 @@
+header:
+  version: 18
+
+local_conf_header: 
+  debug-tweaks: |
+    EXTRA_IMAGE_FEATURES = "debug-tweaks"
+    

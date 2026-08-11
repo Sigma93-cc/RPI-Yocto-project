@@ -20,8 +20,6 @@ local_conf_header:
     DISABLE_VC4GRAPHICS = "1"
     DISABLE_RPI_BOOT_LOGO = "1"
     RPI_USE_U_BOOT = "1"
-  debug-tweaks: |
-    EXTRA_IMAGE_FEATURES = "debug-tweaks"
 repos:
   poky:
     url: https://git.yoctoproject.org/poky.git

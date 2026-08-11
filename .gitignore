@@ -3,3 +3,5 @@ sources
 yocto-cheatsheet.md
 bitbake-vars.md
 recipes-folders.md
+kas_external_pn-*.yml
+.vscode
